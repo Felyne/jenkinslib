@@ -95,8 +95,8 @@ pipeline {
             echo "TAG_NAME is ${TAG_NAME}"
             echo "BUILD_TIMESTAMP is ${BUILD_TIMESTAMP}"
             script {
-                values = [env.BUILD_TIMESTAMP, currentBuild.durationString, workspace]
-                printf("开始时间: %s, 耗时: %s, 工作目录: %s",  values)
+                values = [env.BUILD_TIMESTAMP, currentBuild.durationString]
+                printf("开始时间: %s, 耗时: %s,",  values)
             }
         }
         success {
