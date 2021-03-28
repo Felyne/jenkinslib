@@ -4,6 +4,10 @@
 
 def mytools = new org.devops.tools()
 
+def person = new org.devops.Person(name: "张三")
+
+println(person.getName())
+
 //https://github.com/Felyne/jenkinslib/blob/master/vars/sayBye.groovy
 sayStart()
 
@@ -40,7 +44,10 @@ pipeline {
             steps{  
                 timeout(time:5, unit:"MINUTES"){   
                     script{ 
+                        mytools.PrintMes("获取代码",'red')
+                        mytools.PrintMes("获取代码",'blue')
                         mytools.PrintMes("获取代码",'green')
+                        mytools.PrintMes("获取代码",'green1')
                     }
                 }
             }
