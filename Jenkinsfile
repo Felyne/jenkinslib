@@ -40,6 +40,11 @@ pipeline {
     }
 
     stages {
+        stage('Checkout'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'felyne-ssh-key', url: 'git@github.com:Felyne/admin-tool.git']]])
+            }
+        }
         stage("GetCode"){ 
             steps{  
                 timeout(time:5, unit:"MINUTES"){   
